@@ -1,0 +1,34 @@
+CREATE DATABASE Tript DEFAULT CHARACTER SET utf8;
+
+
+USE Tript;
+
+
+CREATE TABLE users (
+   userID INTEGER NOT NULL AUTO_INCREMENT,
+   user VARCHAR(128) UNIQUE,
+   password VARCHAR(128),
+   license VARCHAR(128),
+   names VARCHAR(128),
+   PRIMARY KEY(userID)
+) ENGINE = InnoDB;
+
+
+INSERT INTO users (user,password,license,names) VALUES ('hector','$7$C6..../....nlsRhw9PRn7muC2.1qXircFG5RcV/5mSQ/6ULVscoaB$yDtWOSugTw5Q0EKKyDl20q./.A3wJyyC3.f6dLymAEC','customer','Héctor Eduardo Báez Reyes');
+INSERT INTO users (user,password,license,names) VALUES ('hectorB','$7$C6..../....nlsRhw9PRn7muC2.1qXircFG5RcV/5mSQ/6ULVscoaB$yDtWOSugTw5Q0EKKyDl20q./.A3wJyyC3.f6dLymAEC','administrator','Héctor Eduardo Báez Reyes');
+
+
+CREATE TABLE symbols (
+   saveID INTEGER NOT NULL AUTO_INCREMENT,
+   user VARCHAR(128),
+   symbol VARCHAR(128),
+   date DATE,
+   PRIMARY KEY(saveID)
+) ENGINE = InnoDB;
+
+
+CREATE TABLE sessionids (
+   user VARCHAR(128),
+   sessionid VARCHAR(128),
+   login_time VARCHAR(128)
+) ENGINE = InnoDB;
